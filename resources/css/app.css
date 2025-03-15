@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    /* light theme */
+    --color-surface: var(--color-white);
+    --color-surface-alt: var(--color-neutral-50);
+    --color-on-surface: var(--color-black);
+    --color-on-surface-strong: var(--color-black);
+    --color-primary: var(--color-violet-500);
+    --color-on-primary: var(--color-white);
+    --color-secondary: var(--color-lime-400);
+    --color-on-secondary: var(--color-black);
+    --color-outline: var(--color-black);
+    --color-outline-strong: var(--color-black);
+
+    /* dark theme */
+    --color-surface-dark: var(--color-neutral-950);
+    --color-surface-dark-alt: var(--color-neutral-800);
+    --color-on-surface-dark: var(--color-neutral-200);
+    --color-on-surface-dark-strong: var(--color-white);
+    --color-primary-dark: var(--color-violet-400);
+    --color-on-primary-dark: var(--color-black);
+    --color-secondary-dark: var(--color-lime-300);
+    --color-on-secondary-dark: var(--color-black);
+    --color-outline-dark: var(--color-neutral-300);
+    --color-outline-dark-strong: var(--color-white);
+
+    /* shared colors */
+    --color-info: var(--color-sky-600);
+    --color-on-info: var(--color-black);
+    --color-success: var(--color-green-600);
+    --color-on-success: var(--color-black);
+    --color-warning: var(--color-amber-500);
+    --color-on-warning: var(--color-black);
+    --color-danger: var(--color-red-500);
+    --color-on-danger: var(--color-black);
+
+    /* border radius */
+    --radius-radius: var(--radius-none);
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Space Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/space-mono-v15-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/montserrat-v29-latin-regular.woff2") format("woff2");
+}
+
+* {
+    font-family: "Space Mono";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Montserrat";
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"] {
+    @apply w-full rounded-radius border border-outline bg-surface-alt px-2 py-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-75 dark:border-outline-dark dark:bg-surface-dark-alt/50 dark:focus-visible:outline-primary-dark;
+}
+
+.btn-primary {
+    @apply whitespace-nowrap rounded-radius bg-primary border border-primary px-4 py-2 text-sm font-medium tracking-wide text-on-primary transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-primary-dark dark:border-primary-dark dark:text-on-primary-dark dark:focus-visible:outline-primary-dark;
+}
