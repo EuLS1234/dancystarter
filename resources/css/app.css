@@ -80,6 +80,18 @@ h5 {
     font-family: "Montserrat";
 }
 
+h1 {
+    @apply font-bold text-4xl tracking-wide text-on-surface-strong dark:text-on-surface-dark-strong;
+}
+
+h2 {
+    @apply font-bold text-3xl tracking-wide text-on-surface-strong dark:text-on-surface-dark-strong;
+}
+
+h3 {
+    @apply font-bold text-2xl tracking-wide text-on-surface-strong dark:text-on-surface-dark-strong;
+}
+
 input[type="text"],
 input[type="search"],
 input[type="password"],

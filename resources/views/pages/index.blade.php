@@ -6,5 +6,5 @@ name("home");
 ?>
 
 <x-layouts.app>
-    
+
 </x-layouts.app>

@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,26 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function name2()
+    {
+        $name = trim(ucwords($this->name));
+        $name = explode(' ', $name);
+        $name2 = '';
+        foreach ($name as $index => $word) {
+            if ($index < 2) {
+                $name2 .= $word.' ';
+            }
+        }
+        return Str::limit(trim($name2), 15);
+    }
+
+    public function emailname()
+    {
+        $email = trim(strtolower($this->email));
+        $name = explode('@', $email);
+
+        return $name[0];
     }
 }
