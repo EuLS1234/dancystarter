@@ -74,6 +74,9 @@
                         </nav>
 
                         <div class="flex items-center">
+                            <!-- Language switcher -->
+                            <livewire:globals.language-switcher/>
+
                             <!-- Theme switcher -->
                             <x-globals.theme-switcher/>
 
