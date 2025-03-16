@@ -98,7 +98,7 @@ new class extends Component {
                 @enderror
             </div>
 
-            <button class='btn-primary w-full'>{{ __('Register') }}</button>
+            <button wire:loading.disabled class='btn-primary w-full'>{{ __('Register') }}</button>
 
             <p class="text-on-surface dark:text-on-surface-dark text-center">
                 {{ __('Already have an account?') }} <a href="{{route('login')}}" wire:navigate class="font-medium text-primary underline-offset-2 hover:underline focus:underline focus:outline-hidden dark:text-primary-dark">{{ __('Sign In') }}</a>
